@@ -17,6 +17,7 @@
         <module>Version06</module>
         <module>Version07</module>
         <module>Version08</module>
+        <module>Version09</module>
     </modules>
 
     <properties>

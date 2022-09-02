@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的首页</title>
+</head>
+
+<body>
+
+    <!--
+        <h1>-<h6>:标题，分为1-6级标题。标题独占一行
+        <center>:居中，该标签在HTML5中已经不再建议使用了。没学习样式前临时使用
+        <input>:输入组件。它是一套组件，用来在页面上获取用户输入的。
+
+                属性type决定着该组件的样式。
+                常见的值有:
+                    text:文本框
+                    button:按钮
+                    checkbox:多选框
+                    radio:单选框
+                    submit:提交按钮
+                    password:密码框
+        <a>:超链接，标签中间的文本是超链接对应的文字，属性href用于指定跳转的路径
+        <br>:换行
+        <table>标签:表格。属性border用于指定边框。
+                    <table>标签中包含<tr>标签用于表示行
+                    <tr>标签中包含<td>标签用于表示列
+                    <td>标签中常见属性:
+                    align:对其方式。left左对齐,right右对齐,center剧中对其
+                    colspan:跨列合并列，合并是从左向右合并列
+                    rowspan:跨行合并列，合并是从上向下合并列
+
+        <img>:图片标签，src属性用于指定图片的路径
+
+        像超链接，图片它们都需要指定一个路径。在页面上路径有两种:
+        1:相对路径
+          例如:
+          <img src="./logo.png">或<img src="logo.png"> 两个路径都表示"当前目录"下的logo.png
+          当前目录:这里的当前目录与java中我们常在File实例化时指定路径时的当前路径不是一回事！！！！！！！！！！
+                  本质区别是html页面是浏览器理解的。java程序是JVM理解的。所以当前路径不是一个位置！！！
+
+          在浏览器上，我们若页面指定了"./",浏览器理解的"./"当前目录是浏览器当前地址栏上URL地址该页面所在的目录
+          举例:
+            请求首页时，我们在浏览器地址栏输入的路径为:
+            http://localhost:8088/myweb/index.html
+
+            若该页面上有一张图片的引用，标签写的时:
+            <img src="./logo.png">
+
+            此时浏览器则理解为这里图片上"./"的位置就是:
+            http://localhost:8088/myweb/
+            因此，浏览器实际认为图片对应的路径时:
+            http://localhost:8088/myweb/logo.png
+
+        相对路径有一个弊端，比如我们在404.html页面上也加入一张图片，指定时<img src="./404.png">,并将该图片也放在
+        404页面所在的root目录下。
+        例如:我们请求如下路径:
+        http://localhost:8088/myweb/i123x.html
+
+        由于该页面不存在，服务端会响应404页面给浏览器。因此浏览器接收到的是404页面，并在页面上看到了图片的引用
+        <img src="./404.png">
+        此时浏览器理解该页面的实际路径是:
+        http://localhost:8088/myweb/404.png
+        因此图片下载会失败，因为该图片并非在myweb目录下!
+
+        总结:
+        "./"的位置:是当前浏览器地址栏上URL地址中最后一个"/"的位置
+
+
+        2:绝对路径
+          http://www.xxxx.com/xxxxx  一般用于引用其他网站的资源时使用。比如超链接跳转其他网站
+
+          "/"开始的路径，比如: /myweb/logo.png 一般用于引用本网站的其他资源使用。
+          例如:
+          在index.html页面上有一张图片，我们可以写作:<img src="/myweb/logo.png">
+          这里最开始的"/"表达的就是抽象路径中第一个"/"的位置
+          http://localhost:8088/myweb/index.html
+                               ^
+                          这个“/”的位置
+          若页面上存在图片:<img src="/myweb/logo.png">
+          浏览器认为该图片src=""这里第一个"/"就是上述位置，因此浏览器理解该图片的实际位置为:
+          http://localhost:8088/myweb/logo.png
+
+
+          404页面上使用图片是，我们指定:<img src="/root/404.png">
+          例如:
+          http://localhost:8088/myweb/aa/bb/cc/dd/i123x.html
+          由于请求的页面不存在，服务端将404页面响应给了浏览器
+          浏览器看到404页面上指定的图片为:<img src="/root/404.png">
+          此时浏览器认为该图片:http://localhost:8088/root/404.png
+
+          总结:"/"表达的就是浏览器地址栏上URL中抽象路径里的第一个"/"
+              "./"表达的就是浏览器地址栏上URL中抽象路径里的最后一个"/"
+    -->
+    <center>
+        <!-- <h1>百度</h1> -->
+        <img src="/myweb/logo.png"><br>
+        <input type="text">
+        <input type="button" value="百度一下"><br>
+        <!--
+            http://localhost:8088/myweb/index.html
+            http://localhost:8088/myweb/reg.html
+         -->
+        <a href="/myweb/reg.html">注册</a>
+        <a href="/myweb/login.html">登录</a><br>
+
+        <a href="http://www.taobao.com">淘宝</a>
+        <table border="1">
+            <tr>
+                <td>第一列</td>
+                <td rowspan="2">第二列</td>
+                <td colspan="2" align="center">第三列</td>
+            </tr>
+            <tr>
+                <td>第一列</td>
+                <td>第三列</td>
+                <td>第四列</td>
+            </tr>
+        </table>
+    </center>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

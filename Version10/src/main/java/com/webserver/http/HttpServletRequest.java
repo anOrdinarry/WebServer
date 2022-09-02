@@ -26,7 +26,6 @@ public class HttpServletRequest {
     // 这个Map存所有消息头，key为消息头的名字 value为消息头的值
     private Map<String,String> headers = new HashMap<>();
 
-
     public HttpServletRequest(Socket socket) throws IOException {
         this.socket = socket;
 
@@ -73,7 +72,7 @@ public class HttpServletRequest {
             headers.put(data[0],data[1]);
             System.out.println("消息头: " + line);
         }
-        System.out.println("headers:"+headers);
+        System.out.println("headers: " + headers);
     }
 
     /**

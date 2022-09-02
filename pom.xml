@@ -29,6 +29,7 @@
         <module>Version18</module>
         <module>Version19</module>
         <module>Version20</module>
+        <module>Version21</module>
     </modules>
 
     <properties>

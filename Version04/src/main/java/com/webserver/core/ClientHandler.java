@@ -58,7 +58,7 @@ public class ClientHandler implements Runnable {
                 headers.put(data[0], data[1]);
                 System.out.println("消息头: " + line);
             }
-            System.out.println("headers: "+ headers);
+            System.out.println("headers: " + headers);
         }
         catch (IOException e) {
             e.printStackTrace();

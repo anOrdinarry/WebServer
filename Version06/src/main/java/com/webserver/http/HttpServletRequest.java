@@ -37,7 +37,6 @@ public class HttpServletRequest {
 
         // 解析消息正文
         parseContent();
-
     }
 
     /**
@@ -78,7 +77,7 @@ public class HttpServletRequest {
     /**
      * 解析消息正文
      */
-    private void parseContent(){
+    private void parseContent() {
 
     }
 

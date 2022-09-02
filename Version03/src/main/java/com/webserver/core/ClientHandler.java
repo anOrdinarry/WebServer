@@ -35,7 +35,7 @@ public class ClientHandler implements Runnable {
 
             while((d = in.read()) != -1) {
                 cur = (char)d; // 将本次读取到的字节转换为char记录
-                if(pre == 13 && cur == 10){ // 判断上次读取的是否为回车符并且本次读取到的是否为换行符
+                if(pre == 13 && cur == 10) { // 判断上次读取的是否为回车符并且本次读取到的是否为换行符
                     // 如果连续读取到了回车+换行符，则停止本行字符串的读取工作
                     break;
                 }

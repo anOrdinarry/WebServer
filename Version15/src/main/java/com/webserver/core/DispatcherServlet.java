@@ -35,10 +35,10 @@ public class DispatcherServlet {
             /myweb/index.html
             /myweb/reg?username=fanchuanqi&password=123456&nickname=chuanqi&age=22
          */
-//        String path = request.getUri();//由于抽象路径可能含有参数，且参数值不是固定的(受用户输入信息影响)。因此不能再用它判断请求的行为了
+//        String path = request.getUri(); // 由于抽象路径可能含有参数，且参数值不是固定的(受用户输入信息影响)。因此不能再用它判断请求的行为了
         String path = request.getRequestURI();
 
-        //首先根据请求路径判断是否为请求某个业务处理
+        // 首先根据请求路径判断是否为请求某个业务处理
         /*
             由于注册页面reg.html上的form表单里action="/myweb/reg"
             因此，当用户在注册页面点击注册按钮提交表单是，浏览器会发送一个请求，该请求的抽象路径如下:
@@ -69,3 +69,15 @@ public class DispatcherServlet {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

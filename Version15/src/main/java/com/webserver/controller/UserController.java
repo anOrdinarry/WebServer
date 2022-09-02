@@ -38,7 +38,7 @@ public class UserController {
         String ageStr = request.getParameter("age");
         System.out.println(username + "," + password + "," + nickname + "," + ageStr);
 
-        if(username.isEmpty()||password.isEmpty()||nickname.isEmpty()||ageStr.isEmpty()||
+        if(username.isEmpty() || password.isEmpty() || nickname.isEmpty() || ageStr.isEmpty() ||
                 !ageStr.matches("[0-9]+")) {
             // 响应一个错误页面给用户
             File file = new File(DispatcherServlet.staticDir,"/myweb/reg_info_error.html");
@@ -52,7 +52,7 @@ public class UserController {
         /*
             将该用户以User对象形式序列化到users目录中，取名叫:[用户名].obj文件
          */
-        User user = new User(username,password,nickname,age);
+        User user = new User(username, password, nickname, age);
         File userFile = new File(userDir,username + ".obj");
 
         // 判断该用户是否已经存在，若存在则响应页面:/myweb/have_user.html  页面居中一行字:该用户已存在，请重新注册

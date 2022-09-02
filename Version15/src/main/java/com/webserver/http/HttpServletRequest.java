@@ -102,13 +102,13 @@ public class HttpServletRequest {
             for(String para : paraArr) {
                 // 将每一组参数按照"="拆分为参数名和参数值:{username, fanchuanqi}
                 String[] arr = para.split("=");
-//                if(arr.length>1) {
+//                if(arr.length > 1) {
 //                    parameters.put(arr[0], arr[1]);
 //                }
 //                else {
 //                    parameters.put(arr[0], "");
 //                }
-                parameters.put(arr[0],arr.length > 1 ? arr[1] : "");
+                parameters.put(arr[0], arr.length > 1 ? arr[1] : "");
             }
         }
 
@@ -127,10 +127,10 @@ public class HttpServletRequest {
                 break;
             }
             String[] data = line.split(":\\s");
-            headers.put(data[0],data[1]);
+            headers.put(data[0], data[1]);
             System.out.println("消息头: " + line);
         }
-        System.out.println("headers:"+headers);
+        System.out.println("headers: " + headers);
     }
 
     /**
@@ -161,7 +161,7 @@ public class HttpServletRequest {
         char pre = 'a'; // 表示上次读取到的字符
         while((d = in.read()) != -1) {
             cur = (char)d; // 将本次读取到的字节转换为char记录
-            if(pre == 13 && cur == 10){ // 判断上次读取的是否为回车符并且本次读取到的是否为换行符
+            if(pre == 13 && cur == 10) { // 判断上次读取的是否为回车符并且本次读取到的是否为换行符
                 // 如果连续读取到了回车+换行符，则停止本行字符串的读取工作
                 break;
             }

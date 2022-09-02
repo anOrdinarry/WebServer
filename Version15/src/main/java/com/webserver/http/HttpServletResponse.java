@@ -129,13 +129,13 @@ public class HttpServletResponse {
         }
 
 //        try {
-//            addHeader("Content-Type",Files.probeContentType(contentFile.toPath()));
-//        } catch (IOException e) {
+//            addHeader("Content-Type", Files.probeContentType(contentFile.toPath()));
+//        }
+//        catch (IOException e) {
 //            e.printStackTrace();
 //        }
 
         addHeader("Content-Length",contentFile.length() + "");
-
     }
 
     public void addHeader(String name,String value) {

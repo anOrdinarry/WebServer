@@ -29,6 +29,7 @@ public class DispatcherServlet {
     }
 
     public void service(HttpServletRequest request, HttpServletResponse response) {
+
         String path = request.getUri();
 
         /*
@@ -53,3 +54,15 @@ public class DispatcherServlet {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

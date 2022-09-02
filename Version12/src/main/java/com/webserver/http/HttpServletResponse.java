@@ -141,8 +141,8 @@ public class HttpServletResponse {
         addHeader("Content-Length",contentFile.length() + "");
     }
 
-    public void addHeader(String name,String value){
-        this.headers.put(name,value);
+    public void addHeader(String name, String value) {
+        this.headers.put(name, value);
     }
 
 }

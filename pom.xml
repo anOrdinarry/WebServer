@@ -20,6 +20,8 @@
         <module>Version09</module>
         <module>Version10</module>
         <module>Version11</module>
+        <module>Version12</module>
+        <module>Version13</module>
     </modules>
 
     <properties>

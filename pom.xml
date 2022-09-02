@@ -22,6 +22,8 @@
         <module>Version11</module>
         <module>Version12</module>
         <module>Version13</module>
+        <module>Version14</module>
+        <module>Version15</module>
     </modules>
 
     <properties>

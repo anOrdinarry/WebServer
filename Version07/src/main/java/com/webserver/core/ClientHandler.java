@@ -13,10 +13,11 @@ import java.nio.charset.StandardCharsets;
 /*
  * 该任务负责与指定的客户端进行HTTP交互
  */
-public class ClientHandler implements Runnable{
+public class ClientHandler implements Runnable {
+
     private Socket socket;
 
-    public ClientHandler(Socket socket){
+    public ClientHandler(Socket socket) {
         this.socket = socket;
     }
 
@@ -68,7 +69,6 @@ public class ClientHandler implements Runnable{
             }
 
             System.out.println("响应发送完毕!!!!!!!!!!!!!!!!");
-
         }
         catch (IOException | URISyntaxException e) {
             e.printStackTrace();

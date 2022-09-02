@@ -43,7 +43,7 @@ public class HttpServletRequest {
      */
     private void parseRequestLine() throws IOException, EmptyRequestException {
         String line = readLine();
-        if(line.isEmpty()){ // 如果请求行没有内容，则说明本次为空请求
+        if(line.isEmpty()) { // 如果请求行没有内容，则说明本次为空请求
             throw new EmptyRequestException();
         }
         System.out.println("请求行内容: " + line);
@@ -95,7 +95,7 @@ public class HttpServletRequest {
          */
         InputStream in = socket.getInputStream();
 
-        //使用StringBuilder用于拼接每一个读取到的字符，并最终组成一个字符串使用
+        // 使用StringBuilder用于拼接每一个读取到的字符，并最终组成一个字符串使用
         StringBuilder builder = new StringBuilder();
 
         int d; // 记录每次读取到的字节
@@ -131,3 +131,15 @@ public class HttpServletRequest {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

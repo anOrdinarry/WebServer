@@ -14,6 +14,7 @@ import java.util.Map;
  *
  */
 public class HttpServletRequest {
+
     private Socket socket;
 
     // 请求行相关信息
@@ -44,8 +45,10 @@ public class HttpServletRequest {
     private void parseRequestLine() throws IOException {
         String line = readLine();
         System.out.println("请求行内容: " + line);
+
         // 将请求行按照空格拆分为三部分，并分别用上述三个变量保存
         String[] data = line.split("\\s");
+
         method = data[0];
         uri = data[1]; // 这里可能出现数组下标越界异常:ArrayIndexOutOfBoundsException,
                        // 这是由于浏览器发送了空请求导致的，解决办法:换一个浏览器请求试试
@@ -128,3 +131,13 @@ public class HttpServletRequest {
     }
 
 }
+
+
+
+
+
+
+
+
+
+

@@ -13,6 +13,7 @@ import java.io.*;
 public class UserController {
 
     private static File userDir; // 表示保存所有用户信息的目录users
+
     static {
         userDir = new File("./users");
         if(!userDir.exists()) {
@@ -29,18 +30,17 @@ public class UserController {
         // 1 通过request获取表单信息
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if(username.isEmpty()||password.isEmpty()) { // 如果没有输入内容则提示输入信息有误
+        if(username.isEmpty() || password.isEmpty()) { // 如果没有输入内容则提示输入信息有误
             File file = new File(DispatcherServlet.staticDir,"/myweb/login_info_error.html");
             response.setContentFile(file);
             return;
         }
 
         // 2 处理登录
-        File userFile = new File(userDir,username+".obj");
-        if(userFile.exists()){ // 该文件存在，才说明用户名输入对了
+        File userFile = new File(userDir,username + ".obj");
+        if(userFile.exists()) { // 该文件存在，才说明用户名输入对了
             // 将该用户注册信息读取回来，用于比对密码
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(userFile));)
-            {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(userFile));) {
                 User user = (User)ois.readObject();
                 if(user.getPassword().equals(password)) { // 密码正确，登录成功
                     File file = new File(DispatcherServlet.staticDir,"/myweb/login_success.html");
@@ -70,9 +70,9 @@ public class UserController {
         String password = request.getParameter("password");
         String nickname = request.getParameter("nickname");
         String ageStr = request.getParameter("age");
-        System.out.println(username + "," + password + "," + nickname+"," + ageStr);
+        System.out.println(username + " , " + password + " , " + nickname + " , " + ageStr);
 
-        if(username.isEmpty()||password.isEmpty()||nickname.isEmpty()||ageStr.isEmpty()||
+        if(username.isEmpty() || password.isEmpty() || nickname.isEmpty() || ageStr.isEmpty() ||
             !ageStr.matches("[0-9]+")) {
             // 响应一个错误页面给用户
             File file = new File(DispatcherServlet.staticDir,"/myweb/reg_info_error.html");
@@ -87,9 +87,9 @@ public class UserController {
             将该用户以User对象形式序列化到users目录中，取名叫:[用户名].obj文件
          */
         User user = new User(username,password,nickname,age);
-        File userFile = new File(userDir,username+".obj");
+        File userFile = new File(userDir,username + ".obj");
 
-        // 判断该用户是否已经存在，若存在则响应页面:/myweb/have_user.html  页面居中一行字:该用户已存在，请重新注册
+        //判断该用户是否已经存在，若存在则响应页面:/myweb/have_user.html  页面居中一行字:该用户已存在，请重新注册
         if(userFile.exists()) {
             File file = new File(DispatcherServlet.staticDir,"/myweb/have_user.html");
             response.setContentFile(file);
@@ -105,7 +105,6 @@ public class UserController {
 
            File file = new File(DispatcherServlet.staticDir,"/myweb/reg_success.html");
            response.setContentFile(file);
-
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -116,6 +115,9 @@ public class UserController {
     }
 
 }
+
+
+
 
 
 

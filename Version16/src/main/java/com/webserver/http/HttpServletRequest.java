@@ -25,7 +25,6 @@ public class HttpServletRequest {
     private String queryString; // 保存uri中的参数部分(?右侧内容)
     private Map<String,String> parameters = new HashMap<>(); // 保存每一组参数
 
-
     // 消息头相关信息
     // 这个Map存所有消息头，key为消息头的名字 value为消息头的值
     private Map<String,String> headers = new HashMap<>();
@@ -51,12 +50,10 @@ public class HttpServletRequest {
         if(line.isEmpty()) { // 如果请求行没有内容，则说明本次为空请求
             throw new EmptyRequestException();
         }
-
         System.out.println("请求行内容: " + line);
 
-        //将请求行按照空格拆分为三部分，并分别用上述三个变量保存
+        // 将请求行按照空格拆分为三部分，并分别用上述三个变量保存
         String[] data = line.split("\\s");
-
         method = data[0];
         uri = data[1];
         protocol = data[2];
@@ -97,20 +94,20 @@ public class HttpServletRequest {
          */
         String[] data = uri.split("\\?");
         requestURI = data[0];
-        if(data.length > 1) { // 按照?拆分后，数组有第二个元素，说明这个uri是含有参数部分的
+        if(data.length > 1) {// 按照?拆分后，数组有第二个元素，说明这个uri是含有参数部分的
             queryString = data[1];
             // 将参数部分按照"&"拆分出每一组参数：{username=fanchuanqi, password=123456, nickname=chuanqi, age=22}
             String[] paraArr = queryString.split("&");
-            for(String para : paraArr){
-                //将每一组参数按照"="拆分为参数名和参数值:{username, fanchuanqi}
+            for(String para : paraArr) {
+                // 将每一组参数按照"="拆分为参数名和参数值:{username, fanchuanqi}
                 String[] arr = para.split("=");
 //                if(arr.length > 1) {
 //                    parameters.put(arr[0], arr[1]);
 //                }
-//                else{
+//                else {
 //                    parameters.put(arr[0], "");
 //                }
-                parameters.put(arr[0],arr.length > 1 ? arr[1] : "");
+                parameters.put(arr[0], arr.length > 1 ? arr[1] : "");
             }
         }
 
@@ -129,7 +126,7 @@ public class HttpServletRequest {
                 break;
             }
             String[] data = line.split(":\\s");
-            headers.put(data[0],data[1]);
+            headers.put(data[0], data[1]);
             System.out.println("消息头: " + line);
         }
         System.out.println("headers: " + headers);
@@ -161,7 +158,6 @@ public class HttpServletRequest {
         int d; // 记录每次读取到的字节
         char cur = 'a'; // 表示本次读取到的字符
         char pre = 'a'; // 表示上次读取到的字符
-
         while((d = in.read()) != -1) {
             cur = (char)d; // 将本次读取到的字节转换为char记录
             if(pre == 13 && cur == 10) { // 判断上次读取的是否为回车符并且本次读取到的是否为换行符
@@ -198,8 +194,19 @@ public class HttpServletRequest {
         return queryString;
     }
 
-    public String getParameter(String name) {
+    public String getParameter(String name){
         return parameters.get(name);
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+

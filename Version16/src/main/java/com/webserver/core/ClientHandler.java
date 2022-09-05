@@ -4,7 +4,7 @@ import com.webserver.http.EmptyRequestException;
 import com.webserver.http.HttpServletRequest;
 import com.webserver.http.HttpServletResponse;
 
-import java.io.*;
+import java.io.IOException;
 import java.net.Socket;
 
 /*
@@ -27,7 +27,7 @@ public class ClientHandler implements Runnable {
 
             // 2 处理请求
             DispatcherServlet servlet = new DispatcherServlet();
-            servlet.service(request, response);
+            servlet.service(request,response);
 
             // 3 发送响应
             response.response();
@@ -50,3 +50,15 @@ public class ClientHandler implements Runnable {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

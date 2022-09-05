@@ -7,6 +7,7 @@ package com.webserver.http;
 public class EmptyRequestException extends Exception {
 
     public EmptyRequestException() {
+
     }
 
     public EmptyRequestException(String message) {

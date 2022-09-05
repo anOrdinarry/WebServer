@@ -89,7 +89,7 @@ public class UserController {
         User user = new User(username, password, nickname, age);
         File userFile = new File(userDir,username + ".obj");
 
-        //判断该用户是否已经存在，若存在则响应页面:/myweb/have_user.html  页面居中一行字:该用户已存在，请重新注册
+        // 判断该用户是否已经存在，若存在则响应页面:/myweb/have_user.html  页面居中一行字:该用户已存在，请重新注册
         if(userFile.exists()) {
             File file = new File(DispatcherServlet.staticDir,"/myweb/have_user.html");
             response.setContentFile(file);

@@ -14,6 +14,7 @@ import java.util.Set;
  * 状态行，响应头，响应正文
  */
 public class HttpServletResponse {
+
     private Socket socket;
 
     // 状态行相关信息
@@ -70,7 +71,7 @@ public class HttpServletResponse {
 
     // 发送响应正文
     private void sendContent() throws IOException {
-        if(contentFile!=null) {
+        if(contentFile != null) {
             try (
                 FileInputStream fis = new FileInputStream(contentFile);
             )
@@ -135,7 +136,7 @@ public class HttpServletResponse {
 //            e.printStackTrace();
 //        }
 
-        addHeader("Content-Length",contentFile.length()+"");
+        addHeader("Content-Length",contentFile.length() + "");
     }
 
     public void addHeader(String name,String value) {
@@ -153,7 +154,7 @@ public class HttpServletResponse {
          statusCode = 302;
          statusReason = "Moved Temporarily";
 
-         addHeader("Location",uri); // Location:位置
+         addHeader("Location", uri); // Location:位置
     }
 
 }

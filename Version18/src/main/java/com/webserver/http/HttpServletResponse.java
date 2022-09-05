@@ -35,7 +35,6 @@ public class HttpServletResponse {
      *  将当前响应对象内容以标准的响应格式发送给客户端
      */
     public void response() throws IOException {
-
         // 发送状态行
         sendStatusLine();
 

@@ -16,7 +16,7 @@ public class UserController {
 
     static {
         userDir = new File("./users");
-        if(!userDir.exists()){
+        if(!userDir.exists()) {
             userDir.mkdirs();
         }
     }

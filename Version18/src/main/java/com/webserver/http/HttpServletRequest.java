@@ -111,7 +111,7 @@ public class HttpServletRequest {
                 break;
             }
             String[] data = line.split(":\\s");
-            headers.put(data[0],data[1]);
+            headers.put(data[0], data[1]);
             System.out.println("消息头: " + line);
         }
         System.out.println("headers: " + headers);
@@ -216,7 +216,7 @@ public class HttpServletRequest {
         return queryString;
     }
 
-    public String getParameter(String name){
+    public String getParameter(String name) {
         return parameters.get(name);
     }
 

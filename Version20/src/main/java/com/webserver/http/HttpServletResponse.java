@@ -71,7 +71,7 @@ public class HttpServletResponse {
 
     // 发送响应正文
     private void sendContent() throws IOException {
-        if(contentFile!=null) {
+        if(contentFile != null) {
             try (
                 FileInputStream fis = new FileInputStream(contentFile);
             )
